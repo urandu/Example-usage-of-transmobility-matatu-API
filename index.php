@@ -83,7 +83,7 @@
         $("#get_route").click(function(){
            // alert($('#origin_lng').val());
 
-            $.get("http://41.89.64.240/projects/trans_mobility/stops/get_trip/"+$('#origin_lat').val()+"/"+$('#origin_lng').val()+"/"+$('#destination_lat').val()+"/"+$('#destination_lng').val(), function(data, status){
+            $.get("http://localhost/projects/trans_mobility/stops/get_trip/"+$('#origin_lat').val()+"/"+$('#origin_lng').val()+"/"+$('#destination_lat').val()+"/"+$('#destination_lng').val(), function(data, status){
                 //alert("Data: " + data + "\nStatus: " + status);
                 //var json = JSON.parse(data);
                 //alert("Advice: " + data.advice );
@@ -134,6 +134,18 @@
                     title: $('#destination_name').val(), // Title
                     text:   'Destination location'
                 });
+
+
+                var line = new google.maps.Polyline({
+                    path: [new google.maps.LatLng(data.origin_stop.lat, data.origin_stop.lon), new google.maps.LatLng(data.destination_stop.lat, data.destination_stop.lon)],
+                    strokeColor: "#FF0000",
+                    strokeOpacity: 1.0,
+                    strokeWeight: 10,
+                    geodesic: true,
+                    map: map
+                });
+
+                line.setMap('#map');
 
                 /*$("#map").addWay({
                     start: new google.maps.LatLng(data.origin.lat, data.origin.lon), // Postal address for the start marker (obligatory)
