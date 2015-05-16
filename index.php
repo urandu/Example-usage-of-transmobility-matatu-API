@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.css.map" >
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="js/jquery.geocomplete.js"></script>
+    <script src="js/jquery.geocomplete.min.js"></script>
 <script type="text/javascript" src="//www.google.com/jsapi"></script>
 
 <script type="text/javascript" src="js/jquery.googlemap.js"></script>
@@ -83,7 +83,7 @@
         $("#get_route").click(function(){
            // alert($('#origin_lng').val());
 
-            $.get("http://localhost/projects/trans_mobility/stops/get_trip/"+$('#origin_lat').val()+"/"+$('#origin_lng').val()+"/"+$('#destination_lat').val()+"/"+$('#destination_lng').val(), function(data, status){
+            $.get("http://apis.foundit.co.ke/trans_mobility_v1/stops/get_trip/"+$('#origin_lat').val()+"/"+$('#origin_lng').val()+"/"+$('#destination_lat').val()+"/"+$('#destination_lng').val()+"?callback=json_callback", function(data, status){
                 //alert("Data: " + data + "\nStatus: " + status);
                 //var json = JSON.parse(data);
                 //alert("Advice: " + data.advice );
