@@ -1,6 +1,4 @@
-<!--<DOCTYPE! html>
-<html>
-<head>-->
+
     <title>SOQO | Matatu Routes</title>
     <link rel="stylesheet"  href="css/bootstrap.css" >
     <link rel="stylesheet" href="css/bootstrap-theme.css" >
@@ -12,8 +10,7 @@
 <script type="text/javascript" src="//www.google.com/jsapi"></script>
 
 <script type="text/javascript" src="js/jquery.googlemap.js"></script>
-<!--</head>-->
-<!--<body class="container">-->
+
 <div class="container">
 <div class="row span 16">
     <div class="col-lg-4 ">
@@ -55,10 +52,7 @@
 
 </div>
     <div class="row span 12">
-        <!--<div class="col-lg-2 right">
-            .
 
-        </div>-->
         <div class="col-lg-12 right">
             <div id="map" class="col col-lg-12" style="height: 400px" ></div>
 
@@ -81,12 +75,10 @@
 
 
         $("#get_route").click(function(){
-           // alert($('#origin_lng').val());
+
 
             $.get("http://apis.foundit.co.ke/trans_mobility_v1/stops/get_trip/"+$('#origin_lat').val()+"/"+$('#origin_lng').val()+"/"+$('#destination_lat').val()+"/"+$('#destination_lng').val()+"?callback=json_callback", function(data, status){
-                //alert("Data: " + data + "\nStatus: " + status);
-                //var json = JSON.parse(data);
-                //alert("Advice: " + data.advice );
+
                 $('#advice_div').text("");
                 $('#advice_div').append(" <h3>Route Advice</h3><strong>"+data.advice+"</strong>");
 
@@ -147,22 +139,9 @@
 
                 line.setMap('#map');
 
-                /*$("#map").addWay({
-                    start: new google.maps.LatLng(data.origin.lat, data.origin.lon), // Postal address for the start marker (obligatory)
-                    end:  [data.origin_stop.lat, data.origin_stop.lon], // Postal Address or GPS coordinates for the end marker (obligatory)
-                    route : 'way', // Block's ID for the route display (optional)
-                    langage : 'english' // language of the route detail (optional)
-                    step: [ // Array of steps (optional)
-                        [48.85837009999999, 2.2944813000000295] // Postal Address or GPS coordinates of the step
-                        "Porte Maillot, 75017 Paris", // Postal Address or GPS coordinates of the step
-                    ]
-                });
-*/
+
 
             });
         });
     });
 </script>
-
-<!--</body>
-</html>-->
