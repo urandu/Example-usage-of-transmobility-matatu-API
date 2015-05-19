@@ -9,7 +9,7 @@
     <script src="js/jquery.geocomplete.min.js"></script>
 <script type="text/javascript" src="//www.google.com/jsapi"></script>
 
-<script type="text/javascript" src="js/jquery.googlemap.js"></script>
+<script type="text/javascript" src="http://foundit.co.ke/p/trans_mobility_ui/js/jquery.googlemap.js"></script>
 
 <div class="container">
 <div class="row span 16">
