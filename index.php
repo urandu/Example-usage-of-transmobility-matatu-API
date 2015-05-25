@@ -9,7 +9,7 @@
     <script src="js/jquery.geocomplete.min.js"></script>
 <script type="text/javascript" src="//www.google.com/jsapi"></script>
 
-<script type="text/javascript" src="http://foundit.co.ke/p/trans_mobility_ui/js/jquery.googlemap.js"></script>
+<script type="text/javascript" src="js/jquery.googlemap.js"></script>
 
 <div class="container">
 <div class="row span 16">
@@ -77,7 +77,7 @@
         $("#get_route").click(function(){
 
 
-            $.get("http://apis.foundit.co.ke/trans_mobility_v1/stops/get_trip/"+$('#origin_lat').val()+"/"+$('#origin_lng').val()+"/"+$('#destination_lat').val()+"/"+$('#destination_lng').val()+"?callback=json_callback", function(data, status){
+            $.get("http://localhost/projects/trans_mobility/stops/get_trip/"+$('#origin_lat').val()+"/"+$('#origin_lng').val()+"/"+$('#destination_lat').val()+"/"+$('#destination_lng').val()+"?callback=json_callback", function(data, status){
 
                 $('#advice_div').text("");
                 $('#advice_div').append(" <h3>Route Advice</h3><strong>"+data.advice+"</strong>");
